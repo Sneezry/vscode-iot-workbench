@@ -37,12 +37,4 @@ deploy:
     on:
       tags: true
       all_branches: true
-  # deploy to vscode extension market
-  - provider: script  
-    script: vsce publish -p $VSCE_TOKEN --packagePath *.vsix
-    skip_cleanup: true
-    on:
-      tags: true
-      all_branches: true
-      # if it's a PROD tag (something like 1.0.0), then publish extension to market.
-      condition: "$TRAVIS_TAG =~ $ISPRODTAG"
+      
